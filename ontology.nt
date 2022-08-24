@@ -1,0 +1,206 @@
+<https://w3id.org/consolid#> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<https://w3id.org/consolid#> <http://www.w3.org/2002/07/owl#versionIRI> <urn:absolute:0.0.1> .
+<https://w3id.org/consolid#> <http://purl.org/dc/terms/contributor> "Erik Mannens" .
+<https://w3id.org/consolid#> <http://purl.org/dc/terms/contributor> "Jakob Beetz" .
+<https://w3id.org/consolid#> <http://purl.org/dc/terms/contributor> "Pieter Pauwels" .
+<https://w3id.org/consolid#> <http://purl.org/dc/terms/creator> "Jeroen Werbrouck" .
+<https://w3id.org/consolid#> <http://purl.org/dc/terms/issued> "2022-02-01T12:00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://w3id.org/consolid#> <http://purl.org/dc/terms/license> <https://creativecommons.org/licenses/by/1.0/> .
+<https://w3id.org/consolid#> <http://purl.org/dc/terms/title> "consolid vocabulary" .
+# 
+# 
+# #################################################################
+# #
+# #    Annotation properties
+# #
+# #################################################################
+# 
+# 
+# http://purl.org/dc/terms/contributor
+<http://purl.org/dc/terms/contributor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/issued
+<http://purl.org/dc/terms/issued> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/license
+<http://purl.org/dc/terms/license> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# http://www.w3.org/ns/ldp#contains
+<http://www.w3.org/ns/ldp#contains> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+# 
+# https://w3id.org/consolid#aggregates
+<https://w3id.org/consolid#aggregates> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/consolid#aggregates> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/ns/ldp#contains> .
+<https://w3id.org/consolid#aggregates> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/consolid#Aggregator> .
+# 
+# https://w3id.org/consolid#hasDatasetRegistry
+<https://w3id.org/consolid#hasDatasetRegistry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/consolid#hasDatasetRegistry> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/consolid#hasRegistry> .
+<https://w3id.org/consolid#hasRegistry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/consolid#hasDatasetRegistry> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/consolid#PartialProject> .
+<https://w3id.org/consolid#hasDatasetRegistry> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/consolid#DatasetRegistry> .
+<https://w3id.org/consolid#DatasetRegistry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/consolid#hasDatasetRegistry> <http://www.w3.org/2000/01/rdf-schema#label> "has dataset registry"@en .
+# 
+# https://w3id.org/consolid#hasIdentifier
+<https://w3id.org/consolid#hasIdentifier> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/consolid#hasIdentifier> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/consolid#Reference> .
+<https://w3id.org/consolid#hasIdentifier> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/consolid#Identifier> .
+<https://w3id.org/consolid#hasIdentifier> <http://www.w3.org/2000/01/rdf-schema#label> "has identifier"@en .
+# 
+# https://w3id.org/consolid#hasReference
+<https://w3id.org/consolid#hasReference> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/consolid#hasReference> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/consolid#Concept> .
+<https://w3id.org/consolid#Concept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/consolid#hasReference> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/consolid#Reference> .
+<https://w3id.org/consolid#hasReference> <http://www.w3.org/2000/01/rdf-schema#label> "has reference"@en .
+# 
+# https://w3id.org/consolid#hasRegistry
+# 
+# https://w3id.org/consolid#hasSatellite
+<https://w3id.org/consolid#hasSatellite> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/consolid#hasSatellite> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.w3.org/ns/dcat#Dataset> .
+<http://www.w3.org/ns/dcat#Dataset> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/consolid#hasSatellite> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/consolid#Satellite> .
+<https://w3id.org/consolid#hasSatellite> <http://www.w3.org/2000/01/rdf-schema#label> "has Satellite"@en .
+# 
+# https://w3id.org/consolid#hasServiceRegistry
+<https://w3id.org/consolid#hasServiceRegistry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/consolid#hasServiceRegistry> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/consolid#hasRegistry> .
+<https://w3id.org/consolid#hasServiceRegistry> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/consolid#PartialProject> .
+<https://w3id.org/consolid#hasServiceRegistry> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/consolid#ServiceRegistry> .
+<https://w3id.org/consolid#hasServiceRegistry> <http://www.w3.org/2000/01/rdf-schema#label> "has service registry"@en .
+# 
+# https://w3id.org/consolid#hasSparqlSatellite
+<https://w3id.org/consolid#hasSparqlSatellite> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/consolid#hasSparqlSatellite> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/consolid#hasSatellite> .
+<https://w3id.org/consolid#hasSparqlSatellite> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/consolid#SparqlSatellite> .
+<https://w3id.org/consolid#hasSparqlSatellite> <http://www.w3.org/2000/01/rdf-schema#label> "has SPARQL satellite"@en .
+# 
+# https://w3id.org/consolid#inDataset
+<https://w3id.org/consolid#inDataset> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/consolid#inDataset> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/consolid#Reference> .
+<https://w3id.org/consolid#inDataset> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/ns/dcat#Dataset> .
+<https://w3id.org/consolid#inDataset> <http://www.w3.org/2000/01/rdf-schema#label> "in dataset"@en .
+# 
+# https://w3id.org/consolid#inDocument
+<https://w3id.org/consolid#inDocument> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/consolid#inDocument> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<https://w3id.org/consolid#inDocument> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/consolid#Identifier> .
+<https://w3id.org/consolid#inDocument> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/ns/dcat#Distribution> .
+<http://www.w3.org/ns/dcat#Distribution> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/consolid#inDocument> <http://www.w3.org/2000/01/rdf-schema#label> "in document"@en .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://www.w3.org/ns/dcat#Catalog
+<http://www.w3.org/ns/dcat#Catalog> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://www.w3.org/ns/dcat#DataService
+<http://www.w3.org/ns/dcat#DataService> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://www.w3.org/ns/dcat#Dataset
+# 
+# http://www.w3.org/ns/dcat#Distribution
+# 
+# http://www.w3.org/ns/ldp#Container
+<http://www.w3.org/ns/ldp#Container> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# https://w3id.org/consolid#Aggregator
+<https://w3id.org/consolid#Aggregator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/consolid#Aggregator> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/dcat#Catalog> .
+<https://w3id.org/consolid#Aggregator> <http://www.w3.org/2000/01/rdf-schema#comment> "An Aggregator. Abstract superclass for Reference Aggregators and Dataset Aggregators" .
+<https://w3id.org/consolid#Aggregator> <http://www.w3.org/2000/01/rdf-schema#label> "Aggregator" .
+# 
+# https://w3id.org/consolid#Concept
+# 
+# https://w3id.org/consolid#DatasetAggregator
+<https://w3id.org/consolid#DatasetAggregator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/consolid#DatasetAggregator> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/consolid#Aggregator> .
+<https://w3id.org/consolid#DatasetAggregator> <http://www.w3.org/2000/01/rdf-schema#comment> "A Dataset Aggregator aggregates dcat:Dataset-s, dcat:Catalog-s or other dcat:DatasetAggregator instances. It may also recursively aggregate other Dataset Aggregators, in order to quickly find all relevant datasets of a 'project', in cluding on other Pods." .
+<https://w3id.org/consolid#DatasetAggregator> <http://www.w3.org/2000/01/rdf-schema#label> "Dataset Aggregator" .
+# 
+# https://w3id.org/consolid#DatasetRegistry
+# 
+# https://w3id.org/consolid#Identifier
+<https://w3id.org/consolid#Identifier> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/consolid#Identifier> <http://www.w3.org/2000/01/rdf-schema#comment> "The identifier of a reference in a particular dcat:Distribution instance." .
+<https://w3id.org/consolid#Identifier> <http://www.w3.org/2000/01/rdf-schema#label> "Identifier" .
+# 
+# https://w3id.org/consolid#PartialProject
+<https://w3id.org/consolid#PartialProject> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/consolid#PartialProject> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/dcat#Catalog> .
+<https://w3id.org/consolid#PartialProject> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/ldp#Container> .
+<https://w3id.org/consolid#PartialProject> <http://www.w3.org/2000/01/rdf-schema#comment> "An lbd:container with well-defined contributions of one stakeholder in the federated project." .
+<https://w3id.org/consolid#PartialProject> <http://www.w3.org/2000/01/rdf-schema#label> "Partial Project" .
+# 
+# https://w3id.org/consolid#Project
+<https://w3id.org/consolid#Project> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/consolid#Project> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/dcat#Catalog> .
+<https://w3id.org/consolid#Project> <http://www.w3.org/2000/01/rdf-schema#comment> "A ConSolid Project is a dcat:Catalog that aggregates datasets that belong together as they are part of a larger, possibly multi-stakeholder project." .
+<https://w3id.org/consolid#Project> <http://www.w3.org/2000/01/rdf-schema#label> "Project" .
+# 
+# https://w3id.org/consolid#Reference
+<https://w3id.org/consolid#Reference> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/consolid#Reference> <http://www.w3.org/2000/01/rdf-schema#comment> "An lbds:Reference is the digital manifestation of an abstract concept (lbds:Concept)." .
+<https://w3id.org/consolid#Reference> <http://www.w3.org/2000/01/rdf-schema#label> "Reference" .
+# 
+# https://w3id.org/consolid#ReferenceAggregator
+<https://w3id.org/consolid#ReferenceAggregator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/consolid#ReferenceAggregator> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/consolid#Aggregator> .
+<https://w3id.org/consolid#ReferenceAggregator> <http://www.w3.org/2000/01/rdf-schema#comment> "A Reference Aggregator aggregates references that refer to the same abstract concept. It may also recursively aggregate other Reference Aggregators, in order to quickly find aliases of a concept in other Pods." .
+<https://w3id.org/consolid#ReferenceAggregator> <http://www.w3.org/2000/01/rdf-schema#label> "Reference Aggregator" .
+# 
+# https://w3id.org/consolid#ReferenceRegistry
+<https://w3id.org/consolid#ReferenceRegistry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/consolid#ReferenceRegistry> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/consolid#Registry> .
+<https://w3id.org/consolid#ReferenceRegistry> <http://www.w3.org/2000/01/rdf-schema#comment> "A dcat:Catalog instance that refers to a registry with lbds:Concept-s and their references (lbds:Reference) and identifiers (lbds:Identifier)." .
+<https://w3id.org/consolid#ReferenceRegistry> <http://www.w3.org/2000/01/rdf-schema#label> "Reference Registry" .
+# 
+# https://w3id.org/consolid#Registry
+<https://w3id.org/consolid#Registry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/consolid#Registry> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/dcat#Catalog> .
+<https://w3id.org/consolid#Registry> <http://www.w3.org/2000/01/rdf-schema#label> "Registry" .
+# 
+# https://w3id.org/consolid#Satellite
+<https://w3id.org/consolid#Satellite> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/consolid#Satellite> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/dcat#DataService> .
+<https://w3id.org/consolid#Satellite> <http://www.w3.org/2000/01/rdf-schema#comment> "An lbds:Satellite is a highly trusted service, connected to very few Solid Pods. It may function as an alternative storage mechanism, providing specific access to (nested) ldp:Containers, dcat:Datasets, dcat:Catalogs or dcat:Distributions. Satellites can also be thought of as 'digital assistents' to a Pod, aiding in synchronisation, data management etc. When working on a Solid Pod, it must be able to check access rights." .
+<https://w3id.org/consolid#Satellite> <http://www.w3.org/2000/01/rdf-schema#label> "Satellite" .
+# 
+# https://w3id.org/consolid#ServiceRegistry
+<https://w3id.org/consolid#ServiceRegistry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/consolid#ServiceRegistry> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/consolid#Registry> .
+<https://w3id.org/consolid#ServiceRegistry> <http://www.w3.org/2000/01/rdf-schema#comment> "A dcat:Catalog containing datasets which refer to services." .
+<https://w3id.org/consolid#ServiceRegistry> <http://www.w3.org/2000/01/rdf-schema#label> "Service Registry" .
+# 
+# https://w3id.org/consolid#SparqlSatellite
+<https://w3id.org/consolid#SparqlSatellite> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/consolid#SparqlSatellite> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/consolid#Satellite> .
+<https://w3id.org/consolid#SparqlSatellite> <http://www.w3.org/2000/01/rdf-schema#comment> "A SPARQL Satellite is a specifiic sort of satellite, mirroring RDF resources on the Pod and allowing to query their union with SPARQL. The satellite should check the access rights for every result it acquires." .
+<https://w3id.org/consolid#SparqlSatellite> <http://www.w3.org/2000/01/rdf-schema#comment> "SPARQL Satellite" .
+<https://w3id.org/consolid#SparqlSatellite> <http://www.w3.org/2000/01/rdf-schema#label> "SPARQL satellite" .
+# 
+# Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

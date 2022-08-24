@@ -1,0 +1,625 @@
+{
+  "_comment" : "Created with OWL2VOWL (version 0.3.5), http://vowl.visualdataweb.org",
+  "header" : {
+    "languages" : [ "en", "undefined" ],
+    "baseIris" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns", "http://www.w3.org/2002/07/owl", "http://www.w3.org/2000/01/rdf-schema", "http://www.w3.org/2001/XMLSchema", "http://www.w3.org/ns/ldp", "http://www.w3.org/ns/dcat", "https://w3id.org/consolid" ],
+    "title" : {
+      "undefined" : "consolid vocabulary"
+    },
+    "iri" : "https://w3id.org/consolid#",
+    "author" : [ "Jeroen Werbrouck" ],
+    "other" : {
+      "license" : [ {
+        "identifier" : "license",
+        "language" : "undefined",
+        "value" : "https://creativecommons.org/licenses/by/1.0/",
+        "type" : "iri"
+      } ],
+      "creator" : [ {
+        "identifier" : "creator",
+        "language" : "undefined",
+        "value" : "Jeroen Werbrouck",
+        "type" : "label"
+      } ],
+      "contributor" : [ {
+        "identifier" : "contributor",
+        "language" : "undefined",
+        "value" : "Erik Mannens",
+        "type" : "label"
+      }, {
+        "identifier" : "contributor",
+        "language" : "undefined",
+        "value" : "Jakob Beetz",
+        "type" : "label"
+      }, {
+        "identifier" : "contributor",
+        "language" : "undefined",
+        "value" : "Pieter Pauwels",
+        "type" : "label"
+      } ],
+      "title" : [ {
+        "identifier" : "title",
+        "language" : "undefined",
+        "value" : "consolid vocabulary",
+        "type" : "label"
+      } ],
+      "issued" : [ {
+        "identifier" : "issued",
+        "language" : "undefined",
+        "value" : "2022-02-01T12:00:00",
+        "type" : "label"
+      } ]
+    }
+  },
+  "namespace" : [ ],
+  "class" : [ {
+    "id" : "0",
+    "type" : "owl:Class"
+  }, {
+    "id" : "2",
+    "type" : "owl:Class"
+  }, {
+    "id" : "5",
+    "type" : "owl:Class"
+  }, {
+    "id" : "11",
+    "type" : "owl:Class"
+  }, {
+    "id" : "20",
+    "type" : "owl:Class"
+  }, {
+    "id" : "8",
+    "type" : "owl:Class"
+  }, {
+    "id" : "6",
+    "type" : "owl:Class"
+  }, {
+    "id" : "21",
+    "type" : "owl:Class"
+  }, {
+    "id" : "4",
+    "type" : "owl:Class"
+  }, {
+    "id" : "18",
+    "type" : "owl:Thing"
+  }, {
+    "id" : "35",
+    "type" : "owl:Class"
+  }, {
+    "id" : "42",
+    "type" : "owl:Thing"
+  }, {
+    "id" : "13",
+    "type" : "owl:Thing"
+  }, {
+    "id" : "22",
+    "type" : "owl:Class"
+  }, {
+    "id" : "41",
+    "type" : "owl:Class"
+  }, {
+    "id" : "16",
+    "type" : "owl:Class"
+  }, {
+    "id" : "3",
+    "type" : "owl:Class"
+  }, {
+    "id" : "1",
+    "type" : "owl:Class"
+  }, {
+    "id" : "27",
+    "type" : "owl:Class"
+  }, {
+    "id" : "25",
+    "type" : "owl:Class"
+  }, {
+    "id" : "23",
+    "type" : "owl:Class"
+  }, {
+    "id" : "9",
+    "type" : "owl:Class"
+  } ],
+  "classAttribute" : [ {
+    "iri" : "https://w3id.org/consolid#ReferenceRegistry",
+    "baseIri" : "https://w3id.org/consolid",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ReferenceRegistry",
+      "undefined" : "Reference Registry"
+    },
+    "comment" : {
+      "undefined" : "A dcat:Catalog instance that refers to a registry with lbds:Concept-s and their references (lbds:Reference) and identifiers (lbds:Identifier)."
+    },
+    "id" : "0",
+    "superClasses" : [ "1" ]
+  }, {
+    "iri" : "https://w3id.org/consolid#Satellite",
+    "baseIri" : "https://w3id.org/consolid",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Satellite",
+      "undefined" : "Satellite"
+    },
+    "subClasses" : [ "4" ],
+    "comment" : {
+      "undefined" : "An lbds:Satellite is a highly trusted service, connected to very few Solid Pods. It may function as an alternative storage mechanism, providing specific access to (nested) ldp:Containers, dcat:Datasets, dcat:Catalogs or dcat:Distributions. Satellites can also be thought of as 'digital assistents' to a Pod, aiding in synchronisation, data management etc. When working on a Solid Pod, it must be able to check access rights."
+    },
+    "id" : "2",
+    "superClasses" : [ "3" ]
+  }, {
+    "iri" : "https://w3id.org/consolid#DatasetAggregator",
+    "baseIri" : "https://w3id.org/consolid",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "DatasetAggregator",
+      "undefined" : "Dataset Aggregator"
+    },
+    "comment" : {
+      "undefined" : "A Dataset Aggregator aggregates dcat:Dataset-s, dcat:Catalog-s or other dcat:DatasetAggregator instances. It may also recursively aggregate other Dataset Aggregators, in order to quickly find all relevant datasets of a 'project', in cluding on other Pods."
+    },
+    "id" : "5",
+    "superClasses" : [ "6" ]
+  }, {
+    "iri" : "https://w3id.org/consolid#Reference",
+    "baseIri" : "https://w3id.org/consolid",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Reference",
+      "undefined" : "Reference"
+    },
+    "comment" : {
+      "undefined" : "An lbds:Reference is the digital manifestation of an abstract concept (lbds:Concept)."
+    },
+    "id" : "11"
+  }, {
+    "iri" : "https://w3id.org/consolid#Project",
+    "baseIri" : "https://w3id.org/consolid",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Project",
+      "undefined" : "Project"
+    },
+    "comment" : {
+      "undefined" : "A ConSolid Project is a dcat:Catalog that aggregates datasets that belong together as they are part of a larger, possibly multi-stakeholder project."
+    },
+    "id" : "20",
+    "superClasses" : [ "21" ]
+  }, {
+    "iri" : "https://w3id.org/consolid#PartialProject",
+    "baseIri" : "https://w3id.org/consolid",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "PartialProject",
+      "undefined" : "Partial Project"
+    },
+    "comment" : {
+      "undefined" : "An lbd:container with well-defined contributions of one stakeholder in the federated project."
+    },
+    "id" : "8",
+    "superClasses" : [ "22", "21" ]
+  }, {
+    "iri" : "https://w3id.org/consolid#Aggregator",
+    "baseIri" : "https://w3id.org/consolid",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Aggregator",
+      "undefined" : "Aggregator"
+    },
+    "subClasses" : [ "23", "5" ],
+    "comment" : {
+      "undefined" : "An Aggregator. Abstract superclass for Reference Aggregators and Dataset Aggregators"
+    },
+    "id" : "6",
+    "superClasses" : [ "21" ]
+  }, {
+    "iri" : "http://www.w3.org/ns/dcat#Catalog",
+    "baseIri" : "http://www.w3.org/ns/dcat",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Catalog"
+    },
+    "subClasses" : [ "8", "6", "1", "20" ],
+    "attributes" : [ "external" ],
+    "id" : "21"
+  }, {
+    "iri" : "https://w3id.org/consolid#SparqlSatellite",
+    "baseIri" : "https://w3id.org/consolid",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "SparqlSatellite",
+      "undefined" : "SPARQL satellite"
+    },
+    "comment" : {
+      "undefined" : "A SPARQL Satellite is a specifiic sort of satellite, mirroring RDF resources on the Pod and allowing to query their union with SPARQL. The satellite should check the access rights for every result it acquires."
+    },
+    "id" : "4",
+    "superClasses" : [ "2" ]
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#Thing",
+    "baseIri" : "http://owl2vowl.de",
+    "id" : "18",
+    "label" : {
+      "undefined" : "Thing"
+    }
+  }, {
+    "iri" : "http://www.w3.org/ns/dcat#Distribution",
+    "baseIri" : "http://www.w3.org/ns/dcat",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Distribution"
+    },
+    "attributes" : [ "external" ],
+    "id" : "35"
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#Thing",
+    "baseIri" : "http://owl2vowl.de",
+    "id" : "42",
+    "label" : {
+      "undefined" : "Thing"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#Thing",
+    "baseIri" : "http://owl2vowl.de",
+    "id" : "13",
+    "label" : {
+      "undefined" : "Thing"
+    }
+  }, {
+    "iri" : "http://www.w3.org/ns/ldp#Container",
+    "baseIri" : "http://www.w3.org/ns/ldp",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Container"
+    },
+    "subClasses" : [ "8" ],
+    "attributes" : [ "external" ],
+    "id" : "22"
+  }, {
+    "iri" : "https://w3id.org/consolid#ServiceRegistry",
+    "baseIri" : "https://w3id.org/consolid",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ServiceRegistry",
+      "undefined" : "Service Registry"
+    },
+    "comment" : {
+      "undefined" : "A dcat:Catalog containing datasets which refer to services."
+    },
+    "id" : "41",
+    "superClasses" : [ "1" ]
+  }, {
+    "iri" : "https://w3id.org/consolid#Identifier",
+    "baseIri" : "https://w3id.org/consolid",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Identifier",
+      "undefined" : "Identifier"
+    },
+    "comment" : {
+      "undefined" : "The identifier of a reference in a particular dcat:Distribution instance."
+    },
+    "id" : "16"
+  }, {
+    "iri" : "http://www.w3.org/ns/dcat#DataService",
+    "baseIri" : "http://www.w3.org/ns/dcat",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "DataService"
+    },
+    "subClasses" : [ "2" ],
+    "attributes" : [ "external" ],
+    "id" : "3"
+  }, {
+    "iri" : "https://w3id.org/consolid#Registry",
+    "baseIri" : "https://w3id.org/consolid",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Registry",
+      "undefined" : "Registry"
+    },
+    "subClasses" : [ "0", "41" ],
+    "id" : "1",
+    "superClasses" : [ "21" ]
+  }, {
+    "iri" : "http://www.w3.org/ns/dcat#Dataset",
+    "baseIri" : "http://www.w3.org/ns/dcat",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Dataset"
+    },
+    "attributes" : [ "external" ],
+    "id" : "27"
+  }, {
+    "iri" : "https://w3id.org/consolid#Concept",
+    "baseIri" : "https://w3id.org/consolid",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Concept"
+    },
+    "id" : "25"
+  }, {
+    "iri" : "https://w3id.org/consolid#ReferenceAggregator",
+    "baseIri" : "https://w3id.org/consolid",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ReferenceAggregator",
+      "undefined" : "Reference Aggregator"
+    },
+    "comment" : {
+      "undefined" : "A Reference Aggregator aggregates references that refer to the same abstract concept. It may also recursively aggregate other Reference Aggregators, in order to quickly find aliases of a concept in other Pods."
+    },
+    "id" : "23",
+    "superClasses" : [ "6" ]
+  }, {
+    "iri" : "https://w3id.org/consolid#DatasetRegistry",
+    "baseIri" : "https://w3id.org/consolid",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "DatasetRegistry"
+    },
+    "id" : "9"
+  } ],
+  "property" : [ {
+    "id" : "7",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "12",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "15",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "17",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "24",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "26",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "29",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "30",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "31",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "32",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "33",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "34",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "36",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "37",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "38",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "39",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "40",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "19",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "43",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "14",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "28",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "10",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "44",
+    "type" : "owl:objectProperty"
+  } ],
+  "propertyAttribute" : [ {
+    "iri" : "https://w3id.org/consolid#hasDatasetRegistry",
+    "baseIri" : "https://w3id.org/consolid",
+    "range" : "9",
+    "label" : {
+      "IRI-based" : "hasDatasetRegistry",
+      "en" : "has dataset registry"
+    },
+    "superproperty" : [ "10" ],
+    "domain" : "8",
+    "attributes" : [ "object" ],
+    "id" : "7"
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#topObjectProperty",
+    "baseIri" : "http://www.w3.org/2002/07/owl",
+    "range" : "13",
+    "label" : {
+      "IRI-based" : "topObjectProperty"
+    },
+    "domain" : "13",
+    "subproperty" : [ "14" ],
+    "attributes" : [ "object", "external" ],
+    "id" : "12"
+  }, {
+    "iri" : "https://w3id.org/consolid#hasIdentifier",
+    "baseIri" : "https://w3id.org/consolid",
+    "range" : "16",
+    "label" : {
+      "IRI-based" : "hasIdentifier",
+      "en" : "has identifier"
+    },
+    "domain" : "11",
+    "attributes" : [ "object" ],
+    "id" : "15"
+  }, {
+    "iri" : "https://w3id.org/consolid#aggregates",
+    "baseIri" : "https://w3id.org/consolid",
+    "range" : "18",
+    "label" : {
+      "IRI-based" : "aggregates"
+    },
+    "superproperty" : [ "19" ],
+    "domain" : "6",
+    "attributes" : [ "object" ],
+    "id" : "17"
+  }, {
+    "iri" : "https://w3id.org/consolid#hasReference",
+    "baseIri" : "https://w3id.org/consolid",
+    "range" : "11",
+    "label" : {
+      "IRI-based" : "hasReference",
+      "en" : "has reference"
+    },
+    "domain" : "25",
+    "attributes" : [ "object" ],
+    "id" : "24"
+  }, {
+    "iri" : "https://w3id.org/consolid#hasSatellite",
+    "baseIri" : "https://w3id.org/consolid",
+    "range" : "2",
+    "label" : {
+      "IRI-based" : "hasSatellite",
+      "en" : "has Satellite"
+    },
+    "domain" : "27",
+    "subproperty" : [ "28" ],
+    "attributes" : [ "object" ],
+    "id" : "26"
+  }, {
+    "range" : "21",
+    "domain" : "20",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "29"
+  }, {
+    "range" : "21",
+    "domain" : "8",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "30"
+  }, {
+    "range" : "21",
+    "domain" : "1",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "31"
+  }, {
+    "range" : "21",
+    "domain" : "6",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "32"
+  }, {
+    "range" : "2",
+    "domain" : "4",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "33"
+  }, {
+    "range" : "22",
+    "domain" : "8",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "34"
+  }, {
+    "range" : "3",
+    "domain" : "2",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "36"
+  }, {
+    "range" : "6",
+    "domain" : "23",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "37"
+  }, {
+    "range" : "6",
+    "domain" : "5",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "38"
+  }, {
+    "range" : "1",
+    "domain" : "0",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "39"
+  }, {
+    "range" : "1",
+    "domain" : "41",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "40"
+  }, {
+    "iri" : "http://www.w3.org/ns/ldp#contains",
+    "baseIri" : "http://www.w3.org/ns/ldp",
+    "range" : "13",
+    "label" : {
+      "IRI-based" : "contains"
+    },
+    "domain" : "13",
+    "subproperty" : [ "17" ],
+    "attributes" : [ "object", "external" ],
+    "id" : "19"
+  }, {
+    "iri" : "https://w3id.org/consolid#hasServiceRegistry",
+    "baseIri" : "https://w3id.org/consolid",
+    "range" : "41",
+    "label" : {
+      "IRI-based" : "hasServiceRegistry",
+      "en" : "has service registry"
+    },
+    "superproperty" : [ "10" ],
+    "domain" : "8",
+    "attributes" : [ "object" ],
+    "id" : "43"
+  }, {
+    "iri" : "https://w3id.org/consolid#inDocument",
+    "baseIri" : "https://w3id.org/consolid",
+    "range" : "35",
+    "label" : {
+      "IRI-based" : "inDocument",
+      "en" : "in document"
+    },
+    "superproperty" : [ "12" ],
+    "domain" : "16",
+    "attributes" : [ "object" ],
+    "id" : "14"
+  }, {
+    "iri" : "https://w3id.org/consolid#hasSparqlSatellite",
+    "baseIri" : "https://w3id.org/consolid",
+    "range" : "4",
+    "label" : {
+      "IRI-based" : "hasSparqlSatellite",
+      "en" : "has SPARQL satellite"
+    },
+    "superproperty" : [ "26" ],
+    "domain" : "42",
+    "attributes" : [ "object" ],
+    "id" : "28"
+  }, {
+    "iri" : "https://w3id.org/consolid#hasRegistry",
+    "baseIri" : "https://w3id.org/consolid",
+    "range" : "13",
+    "label" : {
+      "IRI-based" : "hasRegistry"
+    },
+    "domain" : "13",
+    "subproperty" : [ "43", "7" ],
+    "attributes" : [ "object" ],
+    "id" : "10"
+  }, {
+    "iri" : "https://w3id.org/consolid#inDataset",
+    "baseIri" : "https://w3id.org/consolid",
+    "range" : "27",
+    "label" : {
+      "IRI-based" : "inDataset",
+      "en" : "in dataset"
+    },
+    "domain" : "11",
+    "attributes" : [ "object" ],
+    "id" : "44"
+  } ]
+}
