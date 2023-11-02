@@ -1,0 +1,302 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://w3id.org/consolid#"
+     xml:base="https://w3id.org/consolid"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:terms="http://purl.org/dc/terms/">
+    <owl:Ontology rdf:about="https://w3id.org/consolid#">
+        <owl:versionIRI rdf:resource="urn:absolute:0.0.1"/>
+        <terms:contributor>Erik Mannens</terms:contributor>
+        <terms:contributor>Jakob Beetz</terms:contributor>
+        <terms:contributor>Pieter Pauwels</terms:contributor>
+        <terms:creator>Jeroen Werbrouck</terms:creator>
+        <terms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2023-09-30T12:00:00</terms:issued>
+        <terms:license rdf:resource="https://creativecommons.org/licenses/by/1.0/"/>
+        <terms:title>consolid vocabulary</terms:title>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://purl.org/dc/terms/contributor -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/contributor"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/creator -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/issued -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/issued"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/license -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/license"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/title -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/title"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://w3id.org/consolid#aggregates -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/consolid#aggregates">
+        <rdfs:domain rdf:resource="https://w3id.org/consolid#ReferenceCollection"/>
+        <rdfs:comment>The consolid:Reference-s or other consolid:ReferenceCollection-s aggregated by this consolid:ReferenceCollection.</rdfs:comment>
+        <rdfs:label>aggregates</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/consolid#hasRegistry -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/consolid#hasRegistry"/>
+    
+
+
+    <!-- https://w3id.org/consolid#hasSatellite -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/consolid#hasSatellite">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/dcat#Dataset"/>
+        <rdfs:range rdf:resource="https://w3id.org/consolid#Satellite"/>
+        <rdfs:label xml:lang="en">has Satellite</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/consolid#hasServiceRegistry -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/consolid#hasServiceRegistry">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/consolid#hasRegistry"/>
+        <rdfs:domain rdf:resource="https://w3id.org/consolid#PartialProject"/>
+        <rdfs:range rdf:resource="https://w3id.org/consolid#ServiceRegistry"/>
+        <rdfs:label xml:lang="en">has service registry</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/consolid#hasSparqlSatellite -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/consolid#hasSparqlSatellite">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/consolid#hasSatellite"/>
+        <rdfs:range rdf:resource="https://w3id.org/consolid#SparqlSatellite"/>
+        <rdfs:label xml:lang="en">has SPARQL satellite</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/consolid#hasUpdate -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/consolid#hasUpdate">
+        <rdfs:comment xml:lang="en">The update of a body of an oa:Annotation, with a new rdf:value.</rdfs:comment>
+        <rdfs:label xml:lang="en">has update</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.w3.org/ns/dcat#Catalog -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/ns/dcat#Catalog"/>
+    
+
+
+    <!-- http://www.w3.org/ns/dcat#DataService -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/ns/dcat#DataService"/>
+    
+
+
+    <!-- http://www.w3.org/ns/dcat#Dataset -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/ns/dcat#Dataset"/>
+    
+
+
+    <!-- https://w3id.org/consolid#PartialProject -->
+
+
+    <owl:Class rdf:about="https://w3id.org/consolid#PartialProject"/>
+    
+
+
+    <!-- https://w3id.org/consolid#Project -->
+
+
+    <owl:Class rdf:about="https://w3id.org/consolid#Project">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/dcat#Catalog"/>
+        <rdfs:comment>A ConSolid Project is a DCAT Catalog that resolves to a federated multi-model. It may be recursive, i.e. ConSolid Projects may &apos;aggregate&apos; each other via dcat:dataset</rdfs:comment>
+        <rdfs:label>Project</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/consolid#ProjectResource -->
+
+
+    <owl:Class rdf:about="https://w3id.org/consolid#ProjectResource">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/dcat#Dataset"/>
+        <rdfs:comment>A Project Resource is a dcat:Dataset describing project information such as BIM models, project plans, etc.</rdfs:comment>
+        <rdfs:label>Project Resource</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/consolid#Reference -->
+
+
+    <owl:Class rdf:about="https://w3id.org/consolid#Reference">
+        <rdfs:comment>A Reference is the digital manifestation of an abstract concept.</rdfs:comment>
+        <rdfs:label>Reference</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/consolid#ReferenceCollection -->
+
+
+    <owl:Class rdf:about="https://w3id.org/consolid#ReferenceCollection">
+        <rdfs:comment>A Reference Collection collects digital references of the same &apos;abstract&apos; concept. It may be seen as the top-level identifier of this concept as well.</rdfs:comment>
+        <rdfs:label>Reference Collection</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/consolid#ReferenceRegistry -->
+
+
+    <owl:Class rdf:about="https://w3id.org/consolid#ReferenceRegistry">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/dcat#Dataset"/>
+        <rdfs:comment>A Reference Registry is a dcat:Dataset describing a resource containing Reference Collections (i.e. &apos;ConSolid linksets&apos;).</rdfs:comment>
+        <rdfs:label>Reference Registry</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/consolid#RuntimeProperty -->
+
+
+    <owl:Class rdf:about="https://w3id.org/consolid#RuntimeProperty">
+        <rdfs:comment>A Runtime Property is a property that cannot be explicitly present in the data, but needs to be generated dynamically. E.g. when in order to conform to a specific shape, a dataset must refer to a project ID, but in ConSolid a dataset may be part of multiple projects. In this case, the project ID must be generated dynamically.</rdfs:comment>
+        <rdfs:label>Runtime Property</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/consolid#Satellite -->
+
+
+    <owl:Class rdf:about="https://w3id.org/consolid#Satellite">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/dcat#DataService"/>
+        <rdfs:comment>A consolid:Satellite is a highly trusted service, connected to a limited set of Solid Pods, mostly just one. It may function as an alternative storage mechanism, providing specific access to (nested) ldp:Containers, dcat:Datasets, dcat:Catalogs or dcat:Distributions. Satellites can also be thought of as &apos;digital assistents&apos; to a Pod, aiding in synchronisation, data management etc. When working on a Solid Pod, it must be able to check access rights.</rdfs:comment>
+        <rdfs:label>Satellite</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/consolid#ServiceRegistry -->
+
+
+    <owl:Class rdf:about="https://w3id.org/consolid#ServiceRegistry"/>
+    
+
+
+    <!-- https://w3id.org/consolid#ShapeCollection -->
+
+
+    <owl:Class rdf:about="https://w3id.org/consolid#ShapeCollection">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/dcat#Catalog"/>
+        <rdfs:comment>A Shape Collection is a DCAT Catalog exclusively containing shapes.</rdfs:comment>
+        <rdfs:label>Shape Collection</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/consolid#SparqlSatellite -->
+
+
+    <owl:Class rdf:about="https://w3id.org/consolid#SparqlSatellite">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/consolid#Satellite"/>
+        <rdfs:comment>A SPARQL Satellite is a specifiic sort of satellite, mirroring RDF resources on the Pod and allowing to query their union with SPARQL. The satellite should check the access rights for every result it acquires.</rdfs:comment>
+        <rdfs:comment>SPARQL Satellite</rdfs:comment>
+        <rdfs:label>SPARQL satellite</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/consolid#ValidationResource -->
+
+
+    <owl:Class rdf:about="https://w3id.org/consolid#ValidationResource">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/dcat#Dataset"/>
+        <rdfs:comment>A Validation Resource is a dcat:Dataset describing a resource with the purpose of validation.</rdfs:comment>
+        <rdfs:label>Validation Resource</rdfs:label>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/ -->
+
+

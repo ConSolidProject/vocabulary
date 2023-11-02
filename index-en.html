@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+ <link rel="stylesheet" href="resources/primer.css" media="screen" />    <link rel="stylesheet" href="resources/rec.css" media="screen" />    <link rel="stylesheet" href="resources/extra.css" media="screen" />    <link rel="stylesheet" href="resources/owl.css" media="screen" />    <title>consolid vocabulary</title>
+
+
+<!-- SCHEMA.ORG METADATA -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://w3id.org/consolid#","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://w3id.org/consolid#","name":"consolid vocabulary", "headline":"Document describing the ontology https://w3id.org/consolid#", "dateReleased":"Thu Nov 02 16:42:52 CET 2023", "dateModified":"2023-11-02", "license":"https://creativecommons.org/licenses/by/1.0/", "author":[{"@type":"Person","name":"Jeroen Werbrouck"}], "contributor":[{"@type":"Person","name":"Erik Mannens"},{"@type":"Person","name":"Jakob Beetz"},{"@type":"Person","name":"Pieter Pauwels"}]}</script>
+
+<script src="resources/jquery.js"></script> 
+<script src="resources/marked.min.js"></script> 
+    <script> 
+function loadHash() {
+  jQuery(".markdown").each(function(el){jQuery(this).after(marked(jQuery(this).text())).remove()});
+	var hash = location.hash;
+	if($(hash).offset()!=null){
+	  $('html, body').animate({scrollTop: $(hash).offset().top}, 0);
+}
+	loadTOC();
+}
+function loadTOC(){
+	//process toc dynamically
+	  var t='<h2>Table of contents</h2><ul>';i = 1;j=0;
+	  jQuery(".list").each(function(){
+		if(jQuery(this).is('h2')){
+			if(j>0){
+				t+='</ul>';
+				j=0;
+			}
+			t+= '<li>'+i+'. <a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+			i++;
+		}
+		if(jQuery(this).is('h3')){
+			if(j==0){
+				t+='<ul>';
+			}
+			j++;
+			t+= '<li>'+(i-1)+'.'+j+'. '+'<a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+		}
+	  });
+	  t+='</ul>';
+	  $("#toc").html(t); 
+}
+$(function(){
+    loadHash();
+}); $.fn.ignore = function(sel){
+        return this.clone().find(sel||">*").remove().end();
+ }; 
+   </script> 
+  </head> 
+
+<body>
+<div class="container">
+<div class="head">
+<div style="float:right">language <a href="index-en.html"><b>en</b></a> </div>
+<h1>consolid vocabulary</h1>
+
+
+<dl>
+<dt>Modified on: 2023-11-02</dt>
+<dt>This version:</dt>
+<dd><a href="urn:absolute:0.0.1">urn:absolute:0.0.1</a></dd>
+<dt>Latest version:</dt>
+<dd><a href="https://w3id.org/consolid#">https://w3id.org/consolid#</a></dd>
+<dt>Issued on:</dt>
+<dd>2023-09-30T12:00:00</dd>
+<dt>Authors:</dt>
+<dd>Jeroen Werbrouck</dd>
+
+<dt>Contributors:</dt>
+<dd>Erik Mannens</dd><dd>Jakob Beetz</dd><dd>Pieter Pauwels</dd>
+
+<dt>Download serialization:</dt><dd><span><a href="ontology.jsonld" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" /></a> </span><span><a href="ontology.owl" target="_blank"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a> </span><span><a href="ontology.nt" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples" /></a> </span><span><a href="ontology.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span></dd><dt>License:</dt><dd><a href="https://creativecommons.org/licenses/by/1.0/" target="_blank"><img src="https://img.shields.io/badge/License-https://creativecommons.org/licenses/by/1.0/-blue.svg" alt="https://creativecommons.org/licenses/by/1.0/" /></a>
+</dd><dt>Visualization:</dt><dd><a href="webvowl/index.html#" target="_blank"><img src="https://img.shields.io/badge/Visualize_with-WebVowl-blue.svg" alt="Visualize with WebVowl" /></a></dd>
+<!-- <dt>Evaluation:</dt><dd><a href="OOPSevaluation/oopsEval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd> --><dt>Cite as:</dt>
+<dd>Jeroen Werbrouck. consolid vocabulary. Retrieved from: urn:absolute:0.0.1</dd>
+</dl>
+
+<hr/>
+</div>
+<div class="status">
+<div>
+<span>Ontology Specification Draft</span>
+</div>
+</div>     <div id="abstract"><h2>Abstract</h2><span class="markdown">
+This is a placeholder text for the abstract. The abstract should contain a couple of sentences summarizing the ontology and its purpose.</span>
+</div>
+<div id="toc"></div> 
+
+<!--INTRODUCTION SECTION-->
+    <div id="introduction"><h2 id="intro" class="list">Introduction <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+This is a place holder text for the introduction. The introduction should briefly describe the ontology, its motivation, state of the art and goals.</span>
+<div id="namespacedeclarations">
+<h3 id="ns" class="list">Namespace declarations</h3>
+<div id="ns" align="center">
+<table>
+<caption> <a href="#ns"> Table 1</a>: Namespaces used in the document </caption>
+<tbody>
+<tr><td><b>[Ontology NS Prefix]</b></td><td>&lt;https://w3id.org/consolid#&gt;</td></tr>
+<tr><td><b>dcat</b></td><td>&lt;http://www.w3.org/ns/dcat#&gt;</td></tr>
+<tr><td><b>owl</b></td><td>&lt;http://www.w3.org/2002/07/owl#&gt;</td></tr>
+<tr><td><b>rdf</b></td><td>&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</td></tr>
+<tr><td><b>rdfs</b></td><td>&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</td></tr>
+<tr><td><b>terms</b></td><td>&lt;http://purl.org/dc/terms/&gt;</td></tr>
+<tr><td><b>xml</b></td><td>&lt;http://www.w3.org/XML/1998/namespace&gt;</td></tr>
+<tr><td><b>xsd</b></td><td>&lt;http://www.w3.org/2001/XMLSchema#&gt;</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+  
+
+<!--OVERVIEW SECTION-->
+    <div id="overview"><h2 id="overv" class="list">consolid vocabulary: Overview <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+This ontology has the following classes and properties.</span>
+<h4>Classes</h4>
+<ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#Project" title="https://w3id.org/consolid#Project">Project</a>
+   </li>
+   <li>
+      <a href="#ProjectResource" title="https://w3id.org/consolid#ProjectResource">Project Resource</a>
+   </li>
+   <li>
+      <a href="#Reference" title="https://w3id.org/consolid#Reference">Reference</a>
+   </li>
+   <li>
+      <a href="#ReferenceCollection" title="https://w3id.org/consolid#ReferenceCollection">Reference Collection</a>
+   </li>
+   <li>
+      <a href="#ReferenceRegistry" title="https://w3id.org/consolid#ReferenceRegistry">Reference Registry</a>
+   </li>
+   <li>
+      <a href="#RuntimeProperty" title="https://w3id.org/consolid#RuntimeProperty">Runtime Property</a>
+   </li>
+   <li>
+      <a href="#Satellite" title="https://w3id.org/consolid#Satellite">Satellite</a>
+   </li>
+   <li>
+      <a href="#ShapeCollection" title="https://w3id.org/consolid#ShapeCollection">Shape Collection</a>
+   </li>
+   <li>
+      <a href="#SparqlSatellite" title="https://w3id.org/consolid#SparqlSatellite">SPARQL satellite</a>
+   </li>
+   <li>
+      <a href="#ValidationResource" title="https://w3id.org/consolid#ValidationResource">Validation Resource</a>
+   </li>
+</ul><h4>Object Properties</h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#aggregates" title="https://w3id.org/consolid#aggregates">aggregates</a>
+   </li>
+   <li>
+      <a href="#hasSatellite" title="https://w3id.org/consolid#hasSatellite">has Satellite</a>
+   </li>
+   <li>
+      <a href="#hasServiceRegistry" title="https://w3id.org/consolid#hasServiceRegistry">has service registry</a>
+   </li>
+   <li>
+      <a href="#hasSparqlSatellite" title="https://w3id.org/consolid#hasSparqlSatellite">has SPARQL satellite</a>
+   </li>
+   <li>
+      <a href="#hasUpdate" title="https://w3id.org/consolid#hasUpdate">has update</a>
+   </li>
+</ul><iframe align="center" width="100%" height ="500px" src="webvowl/index.html"></iframe> 
+</div>
+  
+
+<!--DESCRIPTION SECTION-->
+    <div id="description"><h2 id="desc" class="list">consolid vocabulary: Description <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+
+<span class="markdown">This is a placeholder text for the description of your ontology. The description should include an explanation and a diagram explaining how the classes are related, examples of usage, etc.
+
+</span></div>
+   
+
+<!--CROSSREF SECTION-->
+   <div id="crossref"><h2 id="crossreference" class="list">Cross-reference for consolid vocabulary classes, object properties and data properties <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+This section provides details for each class and property defined by consolid vocabulary.
+<div xmlns:widoco="https://w3id.org/widoco/vocab#"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     id="classes">
+   <h3 id="classes-headline" class="list">Classes</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#Project" title="https://w3id.org/consolid#Project">Project</a>
+      </li>
+      <li>
+         <a href="#ProjectResource" title="https://w3id.org/consolid#ProjectResource">Project Resource</a>
+      </li>
+      <li>
+         <a href="#Reference" title="https://w3id.org/consolid#Reference">Reference</a>
+      </li>
+      <li>
+         <a href="#ReferenceCollection" title="https://w3id.org/consolid#ReferenceCollection">Reference Collection</a>
+      </li>
+      <li>
+         <a href="#ReferenceRegistry" title="https://w3id.org/consolid#ReferenceRegistry">Reference Registry</a>
+      </li>
+      <li>
+         <a href="#RuntimeProperty" title="https://w3id.org/consolid#RuntimeProperty">Runtime Property</a>
+      </li>
+      <li>
+         <a href="#Satellite" title="https://w3id.org/consolid#Satellite">Satellite</a>
+      </li>
+      <li>
+         <a href="#ShapeCollection" title="https://w3id.org/consolid#ShapeCollection">Shape Collection</a>
+      </li>
+      <li>
+         <a href="#SparqlSatellite" title="https://w3id.org/consolid#SparqlSatellite">SPARQL satellite</a>
+      </li>
+      <li>
+         <a href="#ValidationResource" title="https://w3id.org/consolid#ValidationResource">Validation Resource</a>
+      </li>
+   </ul>
+   <div class="entity" id="Project">
+      <h3>Project<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/consolid#Project</p>
+      <div class="comment">
+         <span class="markdown">A ConSolid Project is a DCAT Catalog that resolves to a federated multi-model. It may be recursive, i.e. ConSolid Projects may 'aggregate' each other via dcat:dataset</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="http://www.w3.org/ns/dcat#Catalog"
+               target="_blank"
+               title="http://www.w3.org/ns/dcat#Catalog">catalog</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="ProjectResource">
+      <h3>Project Resource<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/consolid#ProjectResource</p>
+      <div class="comment">
+         <span class="markdown">A Project Resource is a dcat:Dataset describing project information such as BIM models, project plans, etc.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="http://www.w3.org/ns/dcat#Dataset"
+               target="_blank"
+               title="http://www.w3.org/ns/dcat#Dataset">dataset</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Reference">
+      <h3>Reference<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/consolid#Reference</p>
+      <div class="comment">
+         <span class="markdown">A Reference is the digital manifestation of an abstract concept.</span>
+      </div>
+   </div>
+   <div class="entity" id="ReferenceCollection">
+      <h3>Reference Collection<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/consolid#ReferenceCollection</p>
+      <div class="comment">
+         <span class="markdown">A Reference Collection collects digital references of the same 'abstract' concept. It may be seen as the top-level identifier of this concept as well.</span>
+      </div>
+      <dl class="description">
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#aggregates" title="https://w3id.org/consolid#aggregates">aggregates</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="ReferenceRegistry">
+      <h3>Reference Registry<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/consolid#ReferenceRegistry</p>
+      <div class="comment">
+         <span class="markdown">A Reference Registry is a dcat:Dataset describing a resource containing Reference Collections (i.e. 'ConSolid linksets').</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="http://www.w3.org/ns/dcat#Dataset"
+               target="_blank"
+               title="http://www.w3.org/ns/dcat#Dataset">dataset</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="RuntimeProperty">
+      <h3>Runtime Property<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/consolid#RuntimeProperty</p>
+      <div class="comment">
+         <span class="markdown">A Runtime Property is a property that cannot be explicitly present in the data, but needs to be generated dynamically. E.g. when in order to conform to a specific shape, a dataset must refer to a project ID, but in ConSolid a dataset may be part of multiple projects. In this case, the project ID must be generated dynamically.</span>
+      </div>
+   </div>
+   <div class="entity" id="Satellite">
+      <h3>Satellite<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/consolid#Satellite</p>
+      <div class="comment">
+         <span class="markdown">A consolid:Satellite is a highly trusted service, connected to a limited set of Solid Pods, mostly just one. It may function as an alternative storage mechanism, providing specific access to (nested) ldp:Containers, dcat:Datasets, dcat:Catalogs or dcat:Distributions. Satellites can also be thought of as 'digital assistents' to a Pod, aiding in synchronisation, data management etc. When working on a Solid Pod, it must be able to check access rights.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="http://www.w3.org/ns/dcat#DataService"
+               target="_blank"
+               title="http://www.w3.org/ns/dcat#DataService">data service</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#SparqlSatellite" title="https://w3id.org/consolid#SparqlSatellite">SPARQL satellite</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#hasSatellite" title="https://w3id.org/consolid#hasSatellite">has Satellite</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="ShapeCollection">
+      <h3>Shape Collection<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/consolid#ShapeCollection</p>
+      <div class="comment">
+         <span class="markdown">A Shape Collection is a DCAT Catalog exclusively containing shapes.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="http://www.w3.org/ns/dcat#Catalog"
+               target="_blank"
+               title="http://www.w3.org/ns/dcat#Catalog">catalog</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="SparqlSatellite">
+      <h3>SPARQL satellite<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/consolid#SparqlSatellite</p>
+      <div class="comment">
+         <span class="markdown">A SPARQL Satellite is a specifiic sort of satellite, mirroring RDF resources on the Pod and allowing to query their union with SPARQL. The satellite should check the access rights for every result it acquires.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Satellite" title="https://w3id.org/consolid#Satellite">Satellite</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#hasSparqlSatellite" title="https://w3id.org/consolid#hasSparqlSatellite">has SPARQL satellite</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="ValidationResource">
+      <h3>Validation Resource<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/consolid#ValidationResource</p>
+      <div class="comment">
+         <span class="markdown">A Validation Resource is a dcat:Dataset describing a resource with the purpose of validation.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="http://www.w3.org/ns/dcat#Dataset"
+               target="_blank"
+               title="http://www.w3.org/ns/dcat#Dataset">dataset</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+</div><div xmlns:widoco="https://w3id.org/widoco/vocab#"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     id="objectproperties">
+   <h3 id="properties" class="list">Object Properties</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#aggregates" title="https://w3id.org/consolid#aggregates">aggregates</a>
+      </li>
+      <li>
+         <a href="#hasSatellite" title="https://w3id.org/consolid#hasSatellite">has Satellite</a>
+      </li>
+      <li>
+         <a href="#hasServiceRegistry" title="https://w3id.org/consolid#hasServiceRegistry">has service registry</a>
+      </li>
+      <li>
+         <a href="#hasSparqlSatellite" title="https://w3id.org/consolid#hasSparqlSatellite">has SPARQL satellite</a>
+      </li>
+      <li>
+         <a href="#hasUpdate" title="https://w3id.org/consolid#hasUpdate">has update</a>
+      </li>
+   </ul>
+   <div class="entity" id="aggregates">
+      <h3>aggregates<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/consolid#aggregates</p>
+      <div class="comment">
+         <span class="markdown">The consolid:Reference-s or other consolid:ReferenceCollection-s aggregated by this consolid:ReferenceCollection.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#ReferenceCollection" title="https://w3id.org/consolid#ReferenceCollection">Reference Collection</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasSatellite">
+      <h3>has Satellite<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/consolid#hasSatellite</p>
+      <div class="description">
+         <dl>
+            <dt>has sub-properties</dt>
+            <dd>
+               <a href="#hasSparqlSatellite" title="https://w3id.org/consolid#hasSparqlSatellite">has SPARQL satellite</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="http://www.w3.org/ns/dcat#Dataset"
+                  target="_blank"
+                  title="http://www.w3.org/ns/dcat#Dataset">dataset</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#Satellite" title="https://w3id.org/consolid#Satellite">Satellite</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasServiceRegistry">
+      <h3>has service registry<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/consolid#hasServiceRegistry</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="https://w3id.org/consolid#hasRegistry"
+                  target="_blank"
+                  title="https://w3id.org/consolid#hasRegistry">has registry</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="https://w3id.org/consolid#PartialProject"
+                  target="_blank"
+                  title="https://w3id.org/consolid#PartialProject">partial project</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="https://w3id.org/consolid#ServiceRegistry"
+                  target="_blank"
+                  title="https://w3id.org/consolid#ServiceRegistry">service registry</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasSparqlSatellite">
+      <h3>has SPARQL satellite<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/consolid#hasSparqlSatellite</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#hasSatellite" title="https://w3id.org/consolid#hasSatellite">has Satellite</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#SparqlSatellite" title="https://w3id.org/consolid#SparqlSatellite">SPARQL satellite</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasUpdate">
+      <h3>has update<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/consolid#hasUpdate</p>
+      <div class="comment">
+         <span class="markdown">The update of a body of an oa:Annotation, with a new rdf:value.</span>
+      </div>
+   </div>
+</div><div id="legend">
+<h2>Legend <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<div   class="entity">
+<sup class="type-c" title="Classes">c</sup>: Classes <br/>
+<sup class="type-op" title="Object Properties">op</sup>: Object Properties <br/>
+</div>
+</div>
+</div>
+    
+
+<!--REFERENCES SECTION-->
+  <div id="references">
+<h2 id="ref" class="list">References <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+Add your references here. It is recommended to have them as a list.</span>
+
+</div>
+<div id="acknowledgments">
+<h2 id="ack" class="list">Acknowledgments <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<p>
+The authors would like to thank <a href="http://www.essepuntato.it/">Silvio Peroni</a> for developing <a href="http://www.essepuntato.it/lode">LODE</a>, a Live OWL Documentation Environment, which is used for representing the Cross Referencing Section of this document and <a href="https://w3id.org/people/dgarijo">Daniel Garijo</a> for developing <a href="https://github.com/dgarijo/Widoco">Widoco</a>, the program used to create the template used in this documentation.</p>
+</div>
+
+
+</div>
+</body>
+</html>

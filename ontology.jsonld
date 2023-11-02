@@ -23,15 +23,6 @@
   "@id" : "http://www.w3.org/ns/dcat#Dataset",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
 }, {
-  "@id" : "http://www.w3.org/ns/dcat#Distribution",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
-}, {
-  "@id" : "http://www.w3.org/ns/ldp#Container",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
-}, {
-  "@id" : "http://www.w3.org/ns/ldp#contains",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ]
-}, {
   "@id" : "https://w3id.org/consolid#",
   "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ],
   "http://purl.org/dc/terms/contributor" : [ {
@@ -46,7 +37,7 @@
   } ],
   "http://purl.org/dc/terms/issued" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#dateTime",
-    "@value" : "2022-02-01T12:00:00"
+    "@value" : "2023-09-30T12:00:00"
   } ],
   "http://purl.org/dc/terms/license" : [ {
     "@id" : "https://creativecommons.org/licenses/by/1.0/"
@@ -58,63 +49,13 @@
     "@id" : "urn:absolute:0.0.1"
   } ]
 }, {
-  "@id" : "https://w3id.org/consolid#Aggregator",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "An Aggregator. Abstract superclass for Reference Aggregators and Dataset Aggregators"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Aggregator"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://www.w3.org/ns/dcat#Catalog"
-  } ]
-}, {
-  "@id" : "https://w3id.org/consolid#Concept",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
-}, {
-  "@id" : "https://w3id.org/consolid#DatasetAggregator",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "A Dataset Aggregator aggregates dcat:Dataset-s, dcat:Catalog-s or other dcat:DatasetAggregator instances. It may also recursively aggregate other Dataset Aggregators, in order to quickly find all relevant datasets of a 'project', in cluding on other Pods."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Dataset Aggregator"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/consolid#Aggregator"
-  } ]
-}, {
-  "@id" : "https://w3id.org/consolid#DatasetRegistry",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
-}, {
-  "@id" : "https://w3id.org/consolid#Identifier",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "The identifier of a reference in a particular dcat:Distribution instance."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Identifier"
-  } ]
-}, {
   "@id" : "https://w3id.org/consolid#PartialProject",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "An lbd:container with well-defined contributions of one stakeholder in the federated project."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Partial Project"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://www.w3.org/ns/dcat#Catalog"
-  }, {
-    "@id" : "http://www.w3.org/ns/ldp#Container"
-  } ]
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
 }, {
   "@id" : "https://w3id.org/consolid#Project",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "A ConSolid Project is a dcat:Catalog that aggregates datasets that belong together as they are part of a larger, possibly multi-stakeholder project."
+    "@value" : "A ConSolid Project is a DCAT Catalog that resolves to a federated multi-model. It may be recursive, i.e. ConSolid Projects may 'aggregate' each other via dcat:dataset"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "Project"
@@ -123,52 +64,61 @@
     "@id" : "http://www.w3.org/ns/dcat#Catalog"
   } ]
 }, {
+  "@id" : "https://w3id.org/consolid#ProjectResource",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "A Project Resource is a dcat:Dataset describing project information such as BIM models, project plans, etc."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Project Resource"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.w3.org/ns/dcat#Dataset"
+  } ]
+}, {
   "@id" : "https://w3id.org/consolid#Reference",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "An lbds:Reference is the digital manifestation of an abstract concept (lbds:Concept)."
+    "@value" : "A Reference is the digital manifestation of an abstract concept."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "Reference"
   } ]
 }, {
-  "@id" : "https://w3id.org/consolid#ReferenceAggregator",
+  "@id" : "https://w3id.org/consolid#ReferenceCollection",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "A Reference Aggregator aggregates references that refer to the same abstract concept. It may also recursively aggregate other Reference Aggregators, in order to quickly find aliases of a concept in other Pods."
+    "@value" : "A Reference Collection collects digital references of the same 'abstract' concept. It may be seen as the top-level identifier of this concept as well."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Reference Aggregator"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/consolid#Aggregator"
+    "@value" : "Reference Collection"
   } ]
 }, {
   "@id" : "https://w3id.org/consolid#ReferenceRegistry",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "A dcat:Catalog instance that refers to a registry with lbds:Concept-s and their references (lbds:Reference) and identifiers (lbds:Identifier)."
+    "@value" : "A Reference Registry is a dcat:Dataset describing a resource containing Reference Collections (i.e. 'ConSolid linksets')."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "Reference Registry"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/consolid#Registry"
+    "@id" : "http://www.w3.org/ns/dcat#Dataset"
   } ]
 }, {
-  "@id" : "https://w3id.org/consolid#Registry",
+  "@id" : "https://w3id.org/consolid#RuntimeProperty",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Registry"
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "A Runtime Property is a property that cannot be explicitly present in the data, but needs to be generated dynamically. E.g. when in order to conform to a specific shape, a dataset must refer to a project ID, but in ConSolid a dataset may be part of multiple projects. In this case, the project ID must be generated dynamically."
   } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://www.w3.org/ns/dcat#Catalog"
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Runtime Property"
   } ]
 }, {
   "@id" : "https://w3id.org/consolid#Satellite",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "An lbds:Satellite is a highly trusted service, connected to very few Solid Pods. It may function as an alternative storage mechanism, providing specific access to (nested) ldp:Containers, dcat:Datasets, dcat:Catalogs or dcat:Distributions. Satellites can also be thought of as 'digital assistents' to a Pod, aiding in synchronisation, data management etc. When working on a Solid Pod, it must be able to check access rights."
+    "@value" : "A consolid:Satellite is a highly trusted service, connected to a limited set of Solid Pods, mostly just one. It may function as an alternative storage mechanism, providing specific access to (nested) ldp:Containers, dcat:Datasets, dcat:Catalogs or dcat:Distributions. Satellites can also be thought of as 'digital assistents' to a Pod, aiding in synchronisation, data management etc. When working on a Solid Pod, it must be able to check access rights."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "Satellite"
@@ -178,15 +128,18 @@
   } ]
 }, {
   "@id" : "https://w3id.org/consolid#ServiceRegistry",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "https://w3id.org/consolid#ShapeCollection",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "A dcat:Catalog containing datasets which refer to services."
+    "@value" : "A Shape Collection is a DCAT Catalog exclusively containing shapes."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Service Registry"
+    "@value" : "Shape Collection"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/consolid#Registry"
+    "@id" : "http://www.w3.org/ns/dcat#Catalog"
   } ]
 }, {
   "@id" : "https://w3id.org/consolid#SparqlSatellite",
@@ -203,55 +156,28 @@
     "@id" : "https://w3id.org/consolid#Satellite"
   } ]
 }, {
+  "@id" : "https://w3id.org/consolid#ValidationResource",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "A Validation Resource is a dcat:Dataset describing a resource with the purpose of validation."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Validation Resource"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.w3.org/ns/dcat#Dataset"
+  } ]
+}, {
   "@id" : "https://w3id.org/consolid#aggregates",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/consolid#Aggregator"
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "The consolid:Reference-s or other consolid:ReferenceCollection-s aggregated by this consolid:ReferenceCollection."
   } ],
-  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "http://www.w3.org/ns/ldp#contains"
-  } ]
-}, {
-  "@id" : "https://w3id.org/consolid#hasDatasetRegistry",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/consolid#PartialProject"
+    "@id" : "https://w3id.org/consolid#ReferenceCollection"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "has dataset registry"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://w3id.org/consolid#DatasetRegistry"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "https://w3id.org/consolid#hasRegistry"
-  } ]
-}, {
-  "@id" : "https://w3id.org/consolid#hasIdentifier",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/consolid#Reference"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "has identifier"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://w3id.org/consolid#Identifier"
-  } ]
-}, {
-  "@id" : "https://w3id.org/consolid#hasReference",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/consolid#Concept"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "has reference"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://w3id.org/consolid#Reference"
+    "@value" : "aggregates"
   } ]
 }, {
   "@id" : "https://w3id.org/consolid#hasRegistry",
@@ -299,32 +225,14 @@
     "@id" : "https://w3id.org/consolid#hasSatellite"
   } ]
 }, {
-  "@id" : "https://w3id.org/consolid#inDataset",
+  "@id" : "https://w3id.org/consolid#hasUpdate",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/consolid#Reference"
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The update of a body of an oa:Annotation, with a new rdf:value."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
-    "@value" : "in dataset"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/ns/dcat#Dataset"
-  } ]
-}, {
-  "@id" : "https://w3id.org/consolid#inDocument",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/consolid#Identifier"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "in document"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/ns/dcat#Distribution"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "http://www.w3.org/2002/07/owl#topObjectProperty"
+    "@value" : "has update"
   } ]
 } ]
